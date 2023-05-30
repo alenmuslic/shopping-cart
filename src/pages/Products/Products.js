@@ -1,12 +1,12 @@
 import React, { useContext, useState } from "react";
+import { AppContext } from "../../context/AppContext";
 import "./Products.css";
 import Pagination from "@mui/material/Pagination";
 import ProductCard from "../../components/Card/ProductCard";
 import { toast } from "react-hot-toast";
-import { AppContext } from "../../context/AppContext";
 
 export default function Products() {
-  const { products, addToCart, cart } = useContext(AppContext);
+  const { products, addToCart, cart, deleteFromCart } = useContext(AppContext);
   const [page, setPage] = useState(1);
   const handleChange = (event, value) => {
     setPage(value);
@@ -32,7 +32,7 @@ export default function Products() {
                 addToCart(product.id);
               }}
               deleteFromCart={() => {
-                toast.success("Successfully deleted from cart!");
+                deleteFromCart(product.id);
               }}
             />
           ))
