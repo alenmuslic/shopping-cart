@@ -50,7 +50,7 @@ export default function Cart() {
               quantity={product.quantityInCart}
             />
           ))}
-          <p
+          <p 
             onClick={() =>
               navigation("/order", {
                 state: {

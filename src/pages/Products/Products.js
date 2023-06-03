@@ -3,7 +3,6 @@ import { AppContext } from "../../context/AppContext";
 import "./Products.css";
 import Pagination from "@mui/material/Pagination";
 import ProductCard from "../../components/Card/ProductCard";
-import { toast } from "react-hot-toast";
 
 export default function Products() {
   const { products, addToCart, cart, deleteFromCart } = useContext(AppContext);
